@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> 코카콜라 홈페이지</title>
+
+  <!-- 1. css초기화 -->
+  <link href="./css/reset.css" rel="stylesheet" type="text/css">
+
+  <!-- 2. 공통서식 -->
+  <link href="./css/base.css" rel="stylesheet" type="text/css">
+
+  <!-- 3. 레이아웃 서식 -->
+  <link href="./css/pc.css" rel="stylesheet" type="text/css">
+  <link href="./css/tablet.css" rel="stylesheet" type="text/css">
+  <link href="./css/smallpc.css" rel="stylesheet" type="text/css">
+ 
+  <link href="./css/mobile.css" rel="stylesheet" type="text/css">
+
+<!-- 아이콘폰트 주소 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" type="text/css">
+
+<!--스와이퍼 슬라이드 서식-->
+<link href="./css/swiper.css" rel="stylesheet" type="text/css">
+<!-- 제이쿼리 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<style>
+  #modal{width: 100%; height: 100%;
+  position: fixed; top:0px; left:0px;
+background-color: rgba(0,0,0,.8);
+display: none;
+z-index: 10000;}
+
+    #popup{position: absolute;
+      top:40%; left:40%;
+      background-color: #fff;
+      width:300px; height:300px;
+       }
+      
+      #popup a{margin: 0px auto; text-align: center;
+      display: block; width: 80px; height:25px;
+    font-size: 18px;
+  font-weight: bold;
+  line-height: 25px;
+border-radius: 20px;
+border: 1px solid #ccc;}
+      #popup p{line-height: 30px;
+      width:200px;
+      margin: 50px auto;
+      font-size: 16px;
+      font-weight: bold;}
+
+  html,
+  .m_image {
+    position: relative;
+    height: 600px;
+  }
+
+  .m_image{
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 600px;
+  }
+  
+  
+  .m_image .mySwiper .swiper-slide {
+        background-position: center;
+        background-size: cover;
+      }
+   .m_image h2{position: absolute;
+      width: 400px; padding:20px 10px;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.8);
+      z-index: 100; 
+      top:52%; left: 50%; transform: translate(-50%,-50%);
+      font-size: 3.5rem; 
+      text-align: center;
+      font-weight: bold;
+      color:#000000;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    color: #000;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .swiper-pagination-bullet-active {
+    color: #fff;
+    background: #ff7070;
+  }
+
+
+  /*두번째 스와이퍼 슬라이드*/
+  .history {
+        position: relative;
+        height: 455px;
+      }
+
+      .history{
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .history .swiper {
+        width: 100%;
+        height: 455px;
+      }
+
+      .history .swiper-slide{
+        
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .history .swiper-slide img {
+        display: inline-block;
+        object-fit: cover;
+       width:65px; height: 180px;
+       text-align: center;
+       padding-top: 30px;
+      }
+      .history .swiper-slide img:hover{
+      transform: scale(1.1);
+  }
+  
+  .history .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    color: #000;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+
+</style>
+<script>
+  $(document).ready(function(){ 
+   $('#modal').show();
+ 
+   $('#popup a').click(function(){
+   
+   $('#modal').fadeOut();
+   
+ });
+ 
+ 
+ 
+ 
+  });
+ 
+ </script>
+<!-- css3속성 사용시 공급업체 접두가 자동으로 붙여주는 스크립트 소스 -->
+<script src="./script/prefixfree.min.js"></script>
+<!--스와이퍼 제이쿼리-->
+<script src="./js/swiper.js"></script>
+
+</head>
+
+
+
+<body>
+
+ <header>
+
+ 
+
+ <div id="h_top">
+  <h1><a href="#" title="메인로고"><img src="./image/coke-logo.png" alt="메인로고"  class="logo"></a></h1>
+  
+  <ul class="icon">
+    <li><a href="#" title="회원가입 아이콘"><i class="fas fa-sign-in-alt"></i></a></li>
+    <li><a href="#" title="로그인 아이콘"><i class="fas fa-user-alt"></i></a></li>
+  </ul>
+  <nav>
+     <ul class="h_lnb">
+      <li><a href="#" title="검색">검색</a></li>
+      <li><a href="#" title="회원가입">회원가입</a></li>
+      <li><a href="#" title="로그인">로그인</a></li>
+     </ul>
+  </nav>
+</div>
+
+
+<div id="h_bottom">
+  <input type="checkbox" id="toggle">
+  <label for="toggle">
+    <i class="fas fa-bars"></i>
+        </label>
+
+  <nav class="gnb">
+
+    <label for="toggle" class="close_btn">
+      <i class="fa fa-close"></i>
+      </label>
+
+      <i class="fas fa-search"></i>
+      
+      <input type="text" maxlength="12" size="20" class="input">
+      <!--maxlength : 최대글자수, size:가로크기-->
+    <ul>
+      <li>
+        <label for="sub01">회사소개 <i class="fas fa-angle-down"></i></label>
+        <input type="checkbox" id="sub01">
+        <ul class="sub">
+          <li><a href="#" title="회사소개">회사소개</a></li>
+        </ul>
+      </li>
+
+      <li><label for="sub02">스토리 <i class="fas fa-angle-down"></i></label>
+        <input type="checkbox" id="sub02">
+        <ul class="sub">
+          <li><a href="#" title="스토리">스토리</a></li>
+          <li><a href="#" title="브랜드">브랜드</a></li>
+          <li><a href="#" title="코-크 스토리">코-크 스토리</a></li>
+          <li><a href="#" title="라이프">라이프</a></li>
+          <li><a href="#" title="커뮤니티">커뮤니티</a></li>
+          <li><a href="#" title="비디오">비디오</a></li>
+       </ul>
+      </li>
+
+      <li><label for="sub03">프레스센터 <i class="fas fa-angle-down"></i></label>
+        <input type="checkbox" id="sub03">
+        <ul class="sub">
+          <li><a href="#" title="프레스센터">프레스센터</a></li>
+          <li><a href="#" title="보도자료">보도자료</a></li>
+          <li><a href="#" title="이미지갤러리">이미지갤러리</a></li>
+         </ul>
+      </li>
+     
+      <li><label for="sub04">고객안내 <i class="fas fa-angle-down"></i></label>
+        <input type="checkbox" id="sub04">
+        <ul class="sub">
+          <li><a href="#" title="고객안내">고객안내</a></li>
+          
+         </ul>
+      </li>
+
+      <li><label for="sub05">인재채용 <i class="fas fa-angle-down"></i></label>
+        <input type="checkbox" id="sub05">
+        <ul class="sub">
+          <li><a href="#" title="채용안내">채용안내</a></li>
+          <li><a href="#" title="비전·안내상">비전·안내상</a></li>
+          <li><a href="#" title="복리후생">복리후생</a></li>
+         </ul>
+      </li>
+
+     
+    </ul>
+
+
+  </nav>
+</div>
+
+ </header>
+
+
+ <main>
+
+  <section class="m_image">
+    <h2>feel coke!</h2>
+<!-- Swiper -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+   
+    <div class="swiper-slide">
+      <img src="./image/main01.gif" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="./image/main02.png" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="./image/test-9.png" alt="">
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+  </section>
+
+
+  <div class="his">
+    <hr class="hr00">
+    <p class="p0">제품히스토리</p>
+    <hr class="hr001">
+    <p class="pxp">현대 대중문화의 아이콘, <span>코카-콜라 병의 100여 년 역사</span></p>
+  </div>
+
+<section class="history">
+ <h2>history</h2>
+     <!-- Swiper -->
+     <div class="swiper swiper2">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="https://www.coca-colajourney.co.kr/stories/coca-cola-contour-history" title="">
+        <div class="circle">
+          <img src="./image/11.gif" alt="">
+          <p>1899년</p></div></a>
+         </div>
+        <div class="swiper-slide"><a href="https://www.coca-colajourney.co.kr/stories/coca-cola-contour-history" title="">
+          <div class="circle">
+          <img src="./image/22.gif" alt="">
+          <p>1900년</p></div></a></div>
+        <div class="swiper-slide"><a href="https://www.coca-colajourney.co.kr/stories/coca-cola-contour-history" title="">
+          <div class="circle">
+          <img src="./image/33.gif" alt="">
+          <p>1906년</p></div></a></div>
+        <div class="swiper-slide"><a href="https://www.coca-colajourney.co.kr/stories/coca-cola-contour-history" title="">
+          <div class="circle">
+          <img src="./image/44.gif" alt="">
+          <p>1916년</p></div></a></div>
+        <div class="swiper-slide"><a href="https://www.coca-colajourney.co.kr/stories/coca-cola-contour-history" title="">
+          <div class="circle">
+          <img src="./image/55.gif" alt="">
+          <p>1957년</p></div></a></div>
+        <div class="swiper-slide"><a href="https://www.coca-colajourney.co.kr/stories/coca-cola-contour-history" title="">
+          <div class="circle">
+          <img src="./image/66.gif" alt="">
+          <p>1961년</p></div></a></div>
+        <div class="swiper-slide"><a href="https://www.coca-colajourney.co.kr/stories/coca-cola-contour-history" title="">
+          <div class="circle">
+          <img src="./image/77.gif" alt="">
+          <p>1991년</p></div></a></div>
+        <div class="swiper-slide"><a href="https://www.coca-colajourney.co.kr/stories/coca-cola-contour-history" title="">
+          <div class="circle">
+          <img src="./image/881.gif" alt="">
+          <p>1993년</p></div></a></div>
+        <div class="swiper-slide"><a href="https://www.coca-colajourney.co.kr/stories/coca-cola-contour-history" title="">
+          <div class="circle">
+          <img src="./image/99.gif" alt="">
+          <p>2007년</p></div></a></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+</section>
+
+<section class="product">
+ <h2>product</h2>
+<div class="pro1">
+  <hr class="hr01">
+  <p class="p1">제품소개</p>
+  <hr class="hr02">
+<ul>
+<li><img src="./image/Coca-Cola-Original-ICON.jpg" alt="1번이미지"><p>일상의 짜릿한 순간을 함께 해온 세계적인 청량음료&#x0021;</p> <p>original</p><a href="http://www.ccbk.co.kr/product/subIndex.jsp?select_code=101" title="click">click</a></li>
+<li><img src="./image/Coca-Cola-Zero-ICON.jpg" alt="2번이미지"><p>뛰어난 맛은 그대로 설탕은 없는 콜라&#x0021;</p><p>zero</p><a href="http://www.ccbk.co.kr/product/subIndex.jsp?select_code=102" title="click">click</a></li>
+<li><img src="./image/Coca-Cola-Light-ICON.jpg" alt="3번이미지"><p>칼로리를 걱정하는 소비자들을 위한
+  가볍고 상쾌한 맛의 0kcal&#x0021;</p><p>light</p><a href="http://www.ccbk.co.kr/product/subIndex.jsp?select_code=103" title="click">click</a></li>
+</ul>
+</div>
+</section>
+
+
+
+
+<section class="gallery">
+  <h2>gallery</h2>
+  <div class="gal01">
+    <hr class="hr03">
+    <p class="p2">포토갤러리</p>
+    <hr class="hr04">
+    
+<ul class="container">
+<li class=item><a href="https://www.coca-colajourney.co.kr/coke-insta-pick-01#amanodaichi-cocacolaphoto" title=""><img src="./image/gall01.jpg" alt=""><div class="txt"><p>인스타그램 @amanodaichi_cocacolaphoto</p></div></a></li>
+<li class=item><a href="https://www.coca-colajourney.co.kr/coke-insta-pick-01#cocacola-japan" title=""><img src="./image/gall02.jpg" alt=""><div class="txt"><p>인스타그램 @cocacola_japan</p></div></a></li>
+<li class=item><a href="https://www.coca-colajourney.co.kr/coke-insta-pick-01#cocacola-japan" title=""><img src="./image/gall03.jpg" alt=""><div class="txt"><p>인스타그램 @cocacola_japan</p></div></a></li>
+<li class=item><a href="https://www.coca-colajourney.co.kr/coke-insta-pick-01#cocacola-japan" title=""><img src="./image/gall04.jpg" alt=""><div class="txt"><p>인스타그램 @cocacola_japan</p></div></a></li>
+<li class=item><a href="https://www.coca-colajourney.co.kr/coke-insta-pick-01#cocacolagreece" title=""><img src="./image/gall05.jpg" alt=""><div class="txt"><p>인스타그램 @cocacolagreece</p></div></a></li>
+<li class=item><a href="https://www.coca-colajourney.co.kr/coke-insta-pick-01#coke-archives" title=""><img src="./image/g18.jpg" alt=""><div class="txt"><p>인스타그램 @coke_archives</p></div></a></li>
+<li class=item><a href="https://www.coca-colajourney.co.kr/coke-insta-pick-01#oho-tattoo" title=""><img src="./image/g19.jpg" alt=""><div class="txt"><p>인스타그램 @oho_tattoo</p></div></a></li>
+<li class=item><a href="https://www.coca-colajourney.co.kr/coke-insta-pick-01#songzzang3857" title=""><img src="./image/g20.jpg" alt=""><div class="txt"><p>인스타그램 @songzzang3857</p></div></a></li>
+</ul>
+</div>
+</section>
+
+<div class="newbox">
+  <div class="new">
+  <hr class="hr05">
+    <p class="p3">신제품소개</p>
+    <hr class="hr06">
+</div>
+</div>
+
+<article class="new_bottom">
+  <h2>new product</h2>
+  <ul class="box">
+    <li><a href="http://www.ccbk.co.kr/product/subIndex.jsp?select_code=108" title=""><img src="./image/0-1.gif" alt="" class="box1"></a></li>
+    <li><a href="http://www.ccbk.co.kr/product/subIndex.jsp?select_code=206" title=""><img src="./image/0-2.gif" alt="" class="box2"></a></li>
+  </ul>
+</article>
+ </main>
+
+ <footer>   
+ <div class="ft01">
+ 
+
+    <a href="#" title="푸터로고"><img src="./image/logo_footer.png" alt="푸터로고" class="logo02"></a>
+    
+   <a href="#" title="개인정보취급방침" class="ft03">개인정보취급방침</a>
+   <a href="#" title="이용약관" class="ft04">이용약관</a>
+   <a href="#" title="사이트맵" class="ft05">사이트맵</a>
+ 
+  <address class="txt01">회사주소&#x003A; 경상남도 양산시 충렬로 269 (유산동)<br>
+  관리자 이메일주소&#x003A;imi8099@naver.com<br>사업자등록번호 &#x003A; 102-81-411121</address>
+  <address class="txt02">고객상담실 &#x003A; 080-024-5999<br>
+  코카-콜라음료&#x0028;주&#x0029; 대표이사 &#x003A; 이정애</address>
+  <address class="txt03">COPYRIGHT&#x24D2;COCA-COLA BEVERAGE COMPANY&#x002E; ALL RIGHTS RESERVED&#x002E;</address>
+    
+    <div class="sns_icon">
+      <a href="sub.html" title="">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="sub.html" title="">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="sub.html" title="">
+        <i class="fab fa-twitter"></i>
+      </a>
+     </div>
+</div> 
+
+
+ </footer>
+
+ <div id="modal">
+  <div id="popup">
+  <p>이 사이트는 스터디 사이트입니다. <br><br>일부 내용 및 이미지 등은 출처가 따로 있음을 밝힙니다.</p>
+  <a href="#" title="닫기">닫기</a>
+</div>
+</div>
+
+
+ <!-- Initialize Swiper -->
+ <script>
+  var swiper = new Swiper(".mySwiper", {
+    
+    autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + (index + 1) + "</span>";
+      },
+    },
+  });
+
+  /*두번째 스와이퍼 슬라이드*/
+  var swiper = new Swiper(".swiper2", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+ 
+</script>
+</body>
+
+</html>

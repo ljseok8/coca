@@ -1,0 +1,389 @@
+@charset "utf-8";
+
+ @media screen and (min-width:1024px)and (max-width:1199px){
+ 
+  header{
+   width:100%;
+   position: relative;
+   background-color:rgb(0, 0, 0);
+ }
+ 
+ #h_top{width:100%; 
+  height:100px;
+  margin:0 auto;
+ }
+ 
+ .logo{position: absolute;
+   top:15px; left: 5%;
+  width:70px; height: 70px;  }
+
+  #h_top .icon{display:none;}
+   #h_bottom .input{display:none;}
+   #h_bottom .fa-search{display:none;}
+ .fa-bars{color:#fff;
+       position:absolute;
+       right:23px;top:-35px;
+       font-size: 30px;
+     }
+  #h_top .h_lnb{
+   margin-top: 20px;
+   width:400px;
+   float:right;
+   display:flex;
+   justify-content: space-around;
+
+ }
+ #h_top .h_lnb>li>a{
+   color: #fff;}
+ 
+   #h_bottom{
+     width:100%;
+     margin:0px auto;
+     position:relative; 
+   }
+.input{display:none;}
+.gnb>ul>li .fa-angle-down{display:none;}
+.fa-search{display:none;}
+
+
+.gnb{
+ width:600px;
+ position:absolute;
+top:-35px; left:20%;
+}
+.gnb > ul{
+line-height: 30px;
+ display:flex;
+ justify-content:space-around;
+}
+
+.gnb > ul > li{
+ position:relative; /* 부모요소를 기준 설정 */
+ width: 200px;
+}
+.gnb > ul > li label{color:#fff;}
+
+/* 메인메뉴에 마우스 오버시 박스 나오게 함*/
+
+.gnb > ul::after{
+ width:600px; height:250px;
+ background-color:rgba(0, 0, 0, 0.7);
+ display:none;
+ content:"";
+ position:absolute;top:35px;right:30px;
+ z-index: 50;
+}
+.sub{
+ position:absolute;
+font-size: 13px;;
+ display:none; 
+ height: 180px;  }
+ .sub > li > a{
+   line-height:30px;
+   display:block;
+   color:rgb(223, 222, 222);
+   font-weight: bold;
+ }
+ #h_bottom .gnb > ul > li > a{
+ 
+   color:#fdfdfd;
+   font-size:14px;
+ } 
+ 
+#toggle:checked ~.gnb ul .sub{
+ display:block;
+z-index: 1000;
+}
+#toggle:checked ~.gnb ul::after{
+ display:block;
+}
+.close_btn{
+ display:none;
+ }
+.fa-close{display:none;
+font-size: 38px;
+color:#ffffff;}
+
+
+
+   main{
+     /* 헤더에서 사용된 플로트속성 해제 */
+     clear:both; 
+     /* 콘텐츠영역을 벗어난 콘텐츠 숨기기 - 가로스크롤바가 안생기게.  */
+     overflow:hidden;
+   }
+   
+ 
+ 
+ 
+ 
+ .m_image{width:100%;
+ height:600px;}
+ 
+ 
+ .his{width:100%;
+   height:140px;
+   margin:0px auto;
+   position: relative;}
+   .hr00{position: absolute;
+     top:30px; left: 5%; 
+     width:35%;
+     height:5px;
+     background-color:black;}
+     .p0{position: absolute;
+       top:30px; left: 46%;
+     font-size: 16px; 
+     font-weight: bold;
+     color:black;}
+     .hr001{position: absolute;
+       top:30px; right:5%; 
+       width:35%;
+       height:5px;
+       background-color:black;
+     }
+     .pxp{position: absolute;
+       top:100px; left: 28%;
+     font-size: 20px; 
+     font-weight: bold;
+     color:black;}
+     .pxp span{color:#ff0000;}
+     
+ 
+ 
+ 
+ 
+ .history{
+ width:100%;
+ height:390px;
+ }
+  
+ .circle{
+ border-radius: 50%;
+ width:260px; height:260px;
+ background-color: rgb(228, 228, 228);
+ text-align: center;}
+ .circle p{padding-top: 10px;}
+ 
+ 
+ 
+ 
+ .product{width:100%;
+ height:430px;
+ 
+ }
+ .pro1{width:100%;
+   height:430px;
+ position: relative;
+ 
+ margin:0px auto;
+ 
+ 
+ }
+ .hr01{position: absolute;
+ top:30px; left: 5%; 
+ width:35%;
+ height:5px;
+ background-color:black;}
+ .p1{position: absolute;
+   top:23px; left: 46%;
+ font-size: 16px; 
+ font-weight: bold;
+ color:black;}
+ .hr02{position: absolute;
+   top:30px; right:5%; 
+   width:35%;
+   height:5px;
+   background-color:black;
+ }
+ .pro1 ul{display:flex;
+   justify-content: space-around;
+ text-align: center;}
+ .pro1 li>img{
+ padding-top: 100px;
+   width:100%;
+ display:block;}
+
+ .pro1 p{padding:10px 5px;
+ font-weight: bold;}
+ .pro1 li p{margin:15px;}
+ .pro1 ul a{color:#fff;
+   
+ background-color: #333;
+ padding:3px 20px;
+ font-weight: bold;}
+ .pro1 ul a:hover{background-color: rgb(255, 2, 2);
+   
+   font-size: 110%;}
+ 
+ 
+ 
+ .gallery{width:100%;
+ height: 680px;
+ 
+ }
+ .gal01{width:100%;
+ height:680px;
+   margin:0px auto;
+ 
+ position: relative;
+ }
+ .hr03{position: absolute;
+   top:40px; left: 5%; 
+   width:35%;
+   height:5px;
+   background-color:black;}
+   .p2{position: absolute;
+     top:40px; left: 46%;
+   font-size: 16px; 
+   font-weight: bold;
+   color:black;}
+   .hr04{position: absolute;
+     top:40px; right:5%; 
+     width:35%;
+     height:5px;
+     background-color:black;
+   }
+ 
+ 
+ .container{
+ position: absolute;
+ top: 20%; left:12%; 
+ width:75%;
+ 
+ background-color: rgb(0, 0, 0);
+ margin:0px auto;
+ display:grid;
+ padding:10px;
+ grid-gap:10px;
+ grid-template-columns: auto auto auto;
+ grid-template-rows: 230px 230px;
+ }
+ 
+
+ .container img{width: 100%;
+ height: 100%;}
+ .container li:nth-child(7){display: none;}
+ .container li:last-child{display: none;}
+ .item{position:relative;
+   overflow: hidden;}
+   .txt{background-color: rgb(0,0,0);
+     color:#ffffff;
+     line-height: 50px;
+     text-indent: 10px;
+     position: absolute;
+     bottom:-150px;
+     width: 100%;
+     height:50px;
+     transition: 0.7s;
+     }
+ 
+ .item:hover .txt{bottom:0px;}
+ 
+ .newbox{width:100%;
+ height:100px;
+ 
+ }
+ 
+ .new{width: 100%;
+ height:100px;
+ margin:0px auto;
+ position: relative;}
+ .hr05{position: absolute;
+   top:40px; left: 5%; 
+   width:35%;
+   height:5px;
+   background-color:black;}
+   .p3{position: absolute;
+     top:40px; left: 46%;
+   font-size: 16px; 
+   font-weight: bold;
+   color:black;}
+   .hr06{position: absolute;
+     top:40px; right:5%; 
+     width:35%;
+     height:5px;
+     background-color:black;
+   }
+
+
+   .new_bottom{width:100%;
+     }
+     
+
+ .box1, .box2{width: 50%; display:block;
+  }
+  .box1{float: left;}
+   .box2{}
+     .box1:hover{background-color: #fff;
+       opacity: 50%; }
+     .box2:hover{background-color: #fff;
+           opacity: 50%;}
+     
+ 
+ 
+ footer{
+   clear: both;
+   width:100%;
+ height:150px;
+ background-color:rgb(0, 0, 0);
+ }
+ .ft01{width:100%; height: 150px;
+   margin:0px auto;
+ font-size: 11px;
+ color:#fff;
+position: relative;}
+ .ft01 a{color:#fff;}
+ .logo02{padding: 10px 0px 0px 40px;
+    width:100px; height: 44px;}
+ 
+ .sns_icon{position: absolute;
+   right:5%; padding-top: 60px;
+   font-size: 25px;
+ }
+ .fa-instagram{color:red;}
+ .fa-facebook{color:blue;}
+ .fa-twitter{color:cornflowerblue;}
+ .txt01{position: absolute;
+ left:5%;
+ line-height: 30px;}
+ 
+ .ft03{ padding:0px 70px;}
+ .ft04{ padding:0px 70px;}
+ .ft05{ padding:0px 70px;}
+ 
+ .txt02{position: absolute;
+ right:15%;
+ padding-top: 5px;
+ line-height: 30px;}
+ .txt03{position: absolute;
+ left:30%;
+ padding-top: 70px;}
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ } 
